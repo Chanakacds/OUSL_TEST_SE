@@ -1,0 +1,21 @@
+
+<div (change)="selectType($event.target.value)">
+  <div>
+    <input class="form-check-input" type="radio" id="internalRadio"
+                    name="qualification" value={{1}}
+                    >Books
+  </div>
+  <div>
+    <input class="form-check-input" type="radio"
+                    name="qualification" value={{2}} id="externalRadio"
+                    >Magazines
+  </div>
+</div>
+
+<br>------------------------------------------ <br>
+
+
+<div *ngFor="let b of books">
+  <h4>Material Name - {{b.description}}</h4>
+  <h4>-----------------------------------</h4>
+</div>

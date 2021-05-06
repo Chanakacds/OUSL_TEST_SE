@@ -1,0 +1,21 @@
+<div>
+<label for="cS" >Username  : </label>
+              <select name="cS" (change)="selectUser($event.target.value)" >
+                <option value="" disabled hidden selected> ------- Select ------- </option>
+                <option *ngFor="let c of users" name="cS"  value={{c.id}} >
+                  {{c.username}}
+                </option>
+              </select>
+
+            </div>
+
+            <br>
+
+<div>
+---------------------------------
+</div>
+<br>
+<div *ngFor="let c of showName">
+  <h3>Material Name - {{c}}</h3>
+  <h3>-------------------</h3>
+</div>

@@ -1,0 +1,93 @@
+<div class="container"  *ngIf="!spinnerOn">
+	<div class="Content-wrapper">
+		<div class="signup-form" style="padding-bottom: 10px;">
+			<form #form="ngForm" (ngSubmit)="save(data)">
+				<h2 style="text-align: center;">Sign Up</h2>
+				<p style="text-align: center;">Please fill in this form to create an account!</p>
+				<hr>
+				<div class="form-group">
+					<div class="input-group">
+
+						<input type="text" class="form-control" name="username" [(ngModel)]="data.username" placeholder="Username" required="required">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+
+						<input type="email" class="form-control" name="email" [(ngModel)]="data.email" placeholder="Email Address"
+							required="required">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+
+						<input type="password" class="form-control" name="Password" [(ngModel)]="data.password" placeholder="Password"
+							required="required">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+
+						<input type="password" class="form-control" name="Password" [(ngModel)]="data.cpassword" placeholder="Confirm Password"
+							required="required">
+					</div>
+				</div>
+        <div class="form-group">
+					<div class="input-group">
+
+						<input type="text" class="form-control" name="Role" [(ngModel)]="data.role" placeholder="just type LIBRARIAN or STUDENT"
+							required="required">
+					</div>
+				</div>
+
+				<div class="form-group" style="padding-bottom: 25px;">
+					<button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<a href="#popup" class="trigger-btn" data-toggle="modal" hidden id="openModal">Click to Open Confirm
+    Modal</a>
+<div id="popup" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <div class="icon-box-pop">
+                    <i class="material-icons">{{icon}}</i>
+                </div>
+                <h4 class="modal-title w-100">{{head}}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">{{message}}</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-block" data-dismiss="modal" (click)="go()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#error" class="trigger-btn" data-toggle="modal" hidden id="openError">Click to Open Confirm
+    Modal</a>
+<div id="error" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <div class="icon-box-error">
+                    <i class="material-icons">priority_high</i>
+                </div>
+                <h4 class="modal-title w-100">Something went wrong</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">{{message}}</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-warning btn-block" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

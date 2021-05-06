@@ -1,0 +1,54 @@
+<header class="container">
+  <nav class="navbar navbar-expand-lg ">
+
+    <div  class="ousl-heading Font-large">
+      <h1 style="margin-left: auto; margin-right: auto;">Welcome To The Library</h1>
+    </div>
+  </nav>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <div class="row">
+        <img src="../../assets/Images/logo.jpg">
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <div class="Content-wrapper mb-3">
+        <div class="row">
+          <div class="col-12">
+            <h5>
+              Sign in to existing account
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <form *ngIf="!isLoggedIn" #data="ngForm" (ngSubmit)="onFormSubmit(data.value)">
+              <div class="form-group">
+                <label for="email-signin">Username </label>
+                <input type="text" id="email-signin" name="username" [(ngModel)]="form.username" #username="ngModel"
+                  class="form-control input-type form-control-sm" required>
+
+              </div>
+              <div class="form-group">
+                <label for="password">Password </label>
+                <input type="password" id="password" name="password" [(ngModel)]="form.password" #password="ngModel"
+                  class="form-control input-type form-control-sm" required>
+              </div>
+              <div class="form-group">
+                <button [disabled]="!form.username || !form.password" class="btn btn-sm  btn-continue"
+                  type="submit">Sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div>
+        Don't have an account?
+        <a href="signup"> Click here to Signup</a></div>
+
+    </div>
+  </div>
+</div>
+
